@@ -2,10 +2,22 @@
   
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>LD</Authors>
+    <Description>Some utils for creating a service</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/lionel-git/ServiceUtils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lionel-git/ConfigHandler</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Service Windows</PackageTags>
+    <PackageIcon>icons8-service-96.png</PackageIcon>
   </PropertyGroup>
   
   <ItemGroup>
     <None Remove="ServiceUtils.xml" />
+    <None Include="icons8-service-96.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
