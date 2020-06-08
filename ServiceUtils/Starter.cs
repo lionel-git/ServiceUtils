@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ServiceUtils
 {
@@ -6,7 +7,9 @@ namespace ServiceUtils
     {
         public static void Start(string serviceName, string[] args)
         {
-            if (Environment.UserInteractive)
+            // Warning: Environment.UserInteractive always return true in .net core mode ?            
+            bool isConsoleApp = Console.OpenStandardInput(1) != Stream.Null;
+            if (isConsoleApp)
             {
                 Console.WriteLine($"Start service of type {typeof(T)} in console mode...");
                 var service = new T();
