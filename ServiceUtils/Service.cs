@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.IO;
 using System.ServiceProcess;
 
+#pragma warning disable CS1591
+
 namespace ServiceUtils
 {
     [DesignerCategory("Code")]

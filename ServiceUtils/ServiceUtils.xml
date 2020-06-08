@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServiceUtils</name>
+    </assembly>
+    <members>
+        <member name="T:ServiceUtils.IService">
+            <summary>
+            Interface to implement for service
+            </summary>
+        </member>
+        <member name="M:ServiceUtils.IService.OnStart(System.String[])">
+            <summary>
+            The fuction called when service starts
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:ServiceUtils.IService.OnStop">
+            <summary>
+            The function called when service stops
+            </summary>
+        </member>
+        <member name="P:ServiceUtils.IService.ConsoleMode">
+            <summary>
+            A flag to indicate if exe is running in service or console mode
+            </summary>
+        </member>
+        <member name="T:ServiceUtils.Starter`1">
+            <summary>
+            Class that start the service
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ServiceUtils.Starter`1.Start(System.String,System.String[])">
+            <summary>
+            function to start the service
+            </summary>
+            <param name="serviceName"></param>
+            <param name="args"></param>
+        </member>
+    </members>
+</doc>

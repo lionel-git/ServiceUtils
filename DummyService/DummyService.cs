@@ -8,13 +8,15 @@ using ServiceUtils;
 
 namespace DummyService
 {
-    public class DumbService : IService
+    public class DummyService : IService
     {
         private StreamWriter _streamWriter;
         private Task _runner;
         private bool _stop;
 
-        public DumbService()
+        public bool ConsoleMode { get; set; }
+
+        public DummyService()
         {
         }
 
@@ -36,6 +38,7 @@ namespace DummyService
         public void OnStart(string[] args)
         {
             _streamWriter = File.CreateText(@"g:\tmp\DumbService.log");
+            AddLine($"ConsoleMode: {ConsoleMode}");
             _runner = Task.Run(() => Run());
         }
 

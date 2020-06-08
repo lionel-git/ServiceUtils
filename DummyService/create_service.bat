@@ -1,4 +1,6 @@
 ﻿rem create service
-rem to get helpon the command, type sc create
-
-sc create DumbService binPath= g:\my_projects\ServiceUtils\DummyService\bin\Debug\netcoreapp3.1\DummyService.exe
+rem to get help on the command, type sc <command>
+set SVCNAME=DummyService
+sc.exe delete %SVCNAME%
+sc.exe create %SVCNAME% binPath= %~dp0\%SVCNAME%.exe DisplayName= %SVCNAME% start= auto
+sc.exe description %SVCNAME% "Dummy test service for testing"

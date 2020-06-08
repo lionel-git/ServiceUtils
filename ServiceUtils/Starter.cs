@@ -3,8 +3,17 @@ using System.IO;
 
 namespace ServiceUtils
 {
+    /// <summary>
+    /// Class that start the service
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public static class Starter<T> where T : IService, new()
     {
+        /// <summary>
+        /// function to start the service
+        /// </summary>
+        /// <param name="serviceName"></param>
+        /// <param name="args"></param>
         public static void Start(string serviceName, string[] args)
         {
             // Warning: Environment.UserInteractive always return true in .net core mode ?            
@@ -12,7 +21,10 @@ namespace ServiceUtils
             if (isConsoleApp)
             {
                 Console.WriteLine($"Start service of type {typeof(T)} in console mode...");
-                var service = new T();
+                var service = new T
+                {
+                    ConsoleMode = true
+                };
                 service.OnStart(args);
                 Console.WriteLine("Press 'q' to quit...");
                 while (Console.ReadKey().KeyChar != 'q') ;

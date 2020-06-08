@@ -7,7 +7,7 @@ namespace DummyService
     {
         static void Main(string[] args)
         {
-            Starter<DumbService>.Start("DummyService", args);
+            Starter<DummyService>.Start("DummyService", args);
         }
     }
 }

@@ -9,4 +9,10 @@
     <ProjectReference Include="..\ServiceUtils\ServiceUtils.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="create_service.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

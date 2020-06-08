@@ -1,0 +1,47 @@
+﻿=============================================================================
+sc create
+DESCRIPTION :
+        Crée une entrée de service dans le Registre et la base de données
+        des services.
+UTILISATION :
+        sc <serveur> create [nom service] [CheminBin= ] <option1> <option2>...
+
+OPTIONS :
+REMARQUE : le nom d’option contient le signe égal.
+      Un espace est nécessaire entre le signe égal et la valeur.\r
+ type= <own|share|interact|kernel|filesys|rec|userown|usershare>
+       (par défaut = own)
+ start= <boot|system|auto|demand|disabled|delayed-auto>
+       (par défaut = demand)
+ error= <normal|severe|critical|ignore>
+       (par défaut = normal)
+ binPath= <NomCheminAccèsBinaire au fichier .exe>
+ group= <GroupeOrdreChargement>
+ tag= <yes|no>
+ depend= <Dépendances (séparées par / (barre oblique))>
+ obj= <NomCompte|NomObjet>
+       (par défaut = LocalSystem)
+ DisplayName= <nom complet>
+ password= <mot de passe>
+=============================================================================
+sc start
+DESCRIPTION :
+        Démarre l’exécution d’un service.
+UTILISATION :
+        sc <serveur> start [nom_service] <arg1> <arg2> ...
+=============================================================================
+sc delete
+DESCRIPTION :
+        Supprime une entrée de service du Registre.
+        Si le service est en cours d’exécution ou s’il fait l’objet d’un
+        handle ouvert par un autre processus, il est simplement
+        marqué pour suppression.
+UTILISATION :
+        sc <serveur> delete [nom_service]
+=============================================================================
+sc stop
+DESCRIPTION :
+        Envoie une demande de contrôle STOP à un service.
+UTILISATION :
+        sc <serveur> stop [nom service]
+

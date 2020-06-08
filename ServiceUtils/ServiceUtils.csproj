@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="ServiceUtils.xml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.1.0" />
@@ -12,6 +16,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>ServiceUtils.xml</DocumentationFile>
   </PropertyGroup>
   
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
