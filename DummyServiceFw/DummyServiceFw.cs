@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ServiceUtils;
 
-namespace DummyService
+namespace DummyServiceFw
 {
-    public class DummyService : IService
+    public class DummyServiceFw : IService
     {
         private StreamWriter _streamWriter;
         private Task _runner;
@@ -16,7 +17,7 @@ namespace DummyService
 
         public bool ConsoleMode { get; set; }
 
-        public DummyService()
+        public DummyServiceFw()
         {
         }
 
@@ -37,7 +38,7 @@ namespace DummyService
 
         public void OnStart(string[] args)
         {
-            _streamWriter = File.CreateText(@"c:\tmp\DummyServiceCore.log");
+            _streamWriter = File.CreateText(@"c:\tmp\DummyServiceFw.log");
             AddLine($"ConsoleMode: {ConsoleMode}");
             _runner = Task.Run(() => Run());
         }
