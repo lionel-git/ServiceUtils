@@ -31,12 +31,13 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:ServiceUtils.Starter`1.Start(System.String,System.String[])">
+        <member name="M:ServiceUtils.Starter`1.Start(System.String,System.String[],System.Boolean)">
             <summary>
             function to start the service
             </summary>
             <param name="serviceName"></param>
             <param name="args"></param>
+            <param name="useCmdLineArgs">If this flag is set and args is empty, use cmd line args instead</param>
         </member>
     </members>
 </doc>

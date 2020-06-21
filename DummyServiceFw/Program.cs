@@ -11,7 +11,7 @@ namespace DummyServiceFw
     {
         static void Main(string[] args)
         {
-            Starter<DummyServiceFw>.Start("DummyServiceFw", args);
+            Starter<DummyServiceFw>.Start("DummyServiceFw", args, true);
         }
     }
 }

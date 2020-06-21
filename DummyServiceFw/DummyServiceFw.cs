@@ -40,6 +40,8 @@ namespace DummyServiceFw
         {
             _streamWriter = File.CreateText(@"c:\tmp\DummyServiceFw.log");
             AddLine($"ConsoleMode: {ConsoleMode}");
+            AddLine($"args: '{string.Join(" ", args)}'");
+            AddLine($"Prg args: '{string.Join(" ", Environment.GetCommandLineArgs())}'");
             _runner = Task.Run(() => Run());
         }
 

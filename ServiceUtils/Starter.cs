@@ -14,9 +14,10 @@ namespace ServiceUtils
         /// </summary>
         /// <param name="serviceName"></param>
         /// <param name="args"></param>
-        public static void Start(string serviceName, string[] args)
+        /// <param name="useCmdLineArgs">If this flag is set and args is empty, use cmd line args instead</param>
+        public static void Start(string serviceName, string[] args, bool useCmdLineArgs)
         {
-            // Warning: Environment.UserInteractive always return true in .net core mode ?            
+            // Warning: Environment.UserInteractive always return true in .net core mode ?
             bool isConsoleApp = Console.OpenStandardInput(1) != Stream.Null;
             if (isConsoleApp)
             {
@@ -31,7 +32,7 @@ namespace ServiceUtils
                 service.OnStop();
             }
             else
-                System.ServiceProcess.ServiceBase.Run(new Service<T>(serviceName));
+                System.ServiceProcess.ServiceBase.Run(new Service<T>(serviceName, useCmdLineArgs));
         }
     }
 }

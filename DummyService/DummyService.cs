@@ -39,6 +39,8 @@ namespace DummyService
         {
             _streamWriter = File.CreateText(@"c:\tmp\DummyServiceCore.log");
             AddLine($"ConsoleMode: {ConsoleMode}");
+            AddLine($"args: '{string.Join(' ', args)}'");
+            AddLine($"Prg args: '{string.Join(' ', Environment.GetCommandLineArgs())}'");
             _runner = Task.Run(() => Run());
         }
 
