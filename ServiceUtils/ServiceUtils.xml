@@ -4,6 +4,17 @@
         <name>ServiceUtils</name>
     </assembly>
     <members>
+        <member name="T:ServiceUtils.Helpers">
+            <summary>
+            Some helpers for service
+            </summary>
+        </member>
+        <member name="M:ServiceUtils.Helpers.IsConsoleApp">
+            <summary>
+            Detect if program has a console attached
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ServiceUtils.IService">
             <summary>
             Interface to implement for service
